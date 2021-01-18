@@ -2,12 +2,26 @@
 
 namespace Instrucoes
 {
-    class Program
+    internal class NewBaseType
+    {
+        static void InstrucaoDo(string[] args)
+        {
+            string texto;
+            do
+            {
+                texto = Console.ReadLine();
+                Console.WriteLine(texto);
+            } while (!string.IsNullOrEmpty(texto));
+        }
+    }
+
+    class Program : NewBaseType
     {
         static void Declaracoes()
         {
             int a;
-            int b = 2, c = 3;
+            int b = 2; 
+            int c = 3;
             const int d = 4;
             a = 1;
             Console.WriteLine(a + b + c + d);
@@ -54,16 +68,6 @@ namespace Instrucoes
                 Console.WriteLine(args[i]);
                 i++;
             }
-        }
-
-        static void InstrucaoDo(string[] args)
-        {
-            string texto;
-            do
-            {
-                texto = Console.ReadLine();
-                Console.WriteLine(texto);
-            } while (!string.IsNullOrEmpty(texto));
         }
 
         static void InstrucaoFor(string[] args)
